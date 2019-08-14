@@ -11,11 +11,15 @@ var T = new Twit({
 
   stream.on('tweet', function (tweet) {
     T.post('statuses/retweet/:id', { id: tweet.id_str }, function (err, data, response) {
-        console.log(data)
+        
+      })
+      
+    T.post('favorites/create/:id', { id: tweet.id_str }, function (err, data, response) {
+        
       })
     
   })
   stream.on('error', function (event) {
       console.log('error occured');
-      T.stream('statuses/filter', { track: ['#100DaysOfCompetetiveProgrammingNITRR', '#FOSSNITRR', '#100daysofcompetetiveprogrammingnitrr'] })
+      T.stream('statuses/filter', { track: ['#100DaysOfCompetitiveProgrammingNITRR', '#FOSSNITRR', '#100daysofcompetitiveprogrammingnitrr'] })
   })
