@@ -1,13 +1,13 @@
 var Twit= require('twit');
 var T = new Twit({
-    consumer_key:         'DVkMLVadB20V4Lx9ksxXABNip',
-    consumer_secret:      'Ypyhj1McvIRopHrRIBoY5J0yTuMulm1omLu4DmKM3bwDYXi0OK',
-    access_token:         '2364972618-3rUYnKaVknNGnC1Yg8mGgrPH15dopqeUEonRK2o',
-    access_token_secret:  '9Pki8XFBVXqq6ggWGLGsGgJuZzIq19dem4Yb9Hr4TWFtu',
+    consumer_key:         'vJHaz87lxjKzpK52WgNZbxJrw',
+    consumer_secret:      'KiQp1ZdPUOXIwuwQoyAJQATc8srDxcQ4KHVjwGOaq5EqKLBlo0',
+    access_token:         '1161713462956834816-9kNypjHpXJM2xi1dE1T5iGgxTRBQHl',
+    access_token_secret:  '03pjFsN44l0SidzFaanwSOGIJUeAHN0zKIleFjdDjkDec',
     
   })
 
-  var stream = T.stream('statuses/filter', { track: ['#30daysoflearning', '#30Daysoflearning', '#30DaysOfLearning'] })
+  var stream = T.stream('statuses/filter', { track: ['#100DaysOfCompetetiveProgrammingNITRR', '#FOSSNITRR', '#100daysofcompetetiveprogrammingnitrr'] })
 
   stream.on('tweet', function (tweet) {
     T.post('statuses/retweet/:id', { id: tweet.id_str }, function (err, data, response) {
@@ -17,5 +17,5 @@ var T = new Twit({
   })
   stream.on('error', function (event) {
       console.log('error occured');
-      T.stream('statuses/filter', { track: ['#30daysoflearning', '#30Daysoflearning', '#30DaysOfLearning'] })
+      T.stream('statuses/filter', { track: ['#100DaysOfCompetetiveProgrammingNITRR', '#FOSSNITRR', '#100daysofcompetetiveprogrammingnitrr'] })
   })
